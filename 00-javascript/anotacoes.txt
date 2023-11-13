@@ -1,0 +1,9 @@
+revisar:
+  assincronismo:
+    - fetch
+    - async/await
+  array:
+    - forEach
+    - map
+    - filter
+    - includes
