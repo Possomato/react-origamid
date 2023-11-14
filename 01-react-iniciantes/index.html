@@ -3,9 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Carrega o React, React Dom e Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <title>React p/ Iniciantes</title>
 </head>
 <body>
-  
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function App(){
+      return <div>
+        <h1>app react</h1>
+        <Button />
+        <Button />
+        <Produtos />
+        </div>
+    }
+
+    function Button(){
+      const [total, setTotal] = React.useState(0)
+      return <button onClick={() => setTotal(total + 1)}>Adicionar{total}</button>
+    }
+
+    function Produtos(){
+      const produto1 = 'camisa'
+      const produto2 = 'calça'
+
+      function comprou(produto){
+        alert(`Você comprou! ${produto.target.innerText}`)
+      }
+
+      return <div>
+        <button onClick={comprou}>{produto1} - ${(Math.random() * 100).toFixed(0)}</button>
+        <button onClick={comprou}>{produto2} - ${(Math.random() * 100).toFixed(0)}</button>
+        </div>
+    }
+
+    const container = document.querySelector('#root')
+    const root = ReactDOM.createRoot(container)
+    root.render(<App />)
+  </script>
 </body>
-</html>
+</html> 

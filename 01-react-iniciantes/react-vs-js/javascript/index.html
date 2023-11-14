@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+</head>
+<body>
+  <div>
+    <h2>Preço: <span id="preco"></span></h2>
+    <h2>Quantidade: <span id="quantidade"></span></h2>
+    <button id="adicionar">Adicionar</button>
+  </div>
+  <script>
+    let saidaPreco = document.querySelector('#preco')
+    let saidaQuantidade = document.querySelector('#quantidade')
+    const adicionar = document.querySelector('#adicionar')
+
+    quantidade = 0
+    preco = 0
+
+    function adicionarItem(){
+      quantidade ++
+      preco += 250
+
+      saidaQuantidade.textContent = quantidade
+      saidaPreco.textContent = preco
+    }
+    
+    adicionarItem()
+
+    adicionar.addEventListener('click', adicionarItem)
+  </script>
+</body>
+</html>
