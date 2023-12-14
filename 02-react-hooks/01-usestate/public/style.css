@@ -74,6 +74,7 @@ textarea:focus {
 }
 
 button {
+  margin: .5rem;
   cursor: pointer;
   border: none;
   border-radius: var(--radius);
@@ -108,4 +109,9 @@ hr {
   border: 1px solid black;
   margin: 1rem 0;
   padding: 1rem;
+}
+
+.tipos{
+  display: flex;
+  gap: 20px;
 }

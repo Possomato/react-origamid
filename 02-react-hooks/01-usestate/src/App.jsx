@@ -1,14 +1,25 @@
-import React from 'react';
-import Estado from './topicos/Estado';
-import Hook from './topicos/Hook';
-import Props from './topicos/props/Props';
+import React, { useState } from 'react';
+import Aulas from './topicos/Aulas';
+import Desafio from './topicos/Desafio';
 
 const App = () => {
+  const [paginaAtual, setPaginaAtual] = useState(null);
+
+  function handleNavigate(pagina) {
+    setPaginaAtual(pagina);
+  }
+
   return (
     <>
-      <Estado />
-      <Hook />
-      <Props />
+      <h1>React Hooks: useState</h1>
+
+      <div className='tipos'>
+        <button onClick={() => handleNavigate('aulas')}>Aulas</button>
+        <button onClick={() => handleNavigate('desafio')}>Desafio</button>
+      </div>
+
+      {paginaAtual === 'aulas' && <Aulas />}
+      {paginaAtual === 'desafio' && <Desafio />}
     </>
   );
 };
